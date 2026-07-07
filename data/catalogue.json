@@ -1,10 +1,66 @@
 [
   {
     "type": "Livre",
-    "titre": "Test",
-    "reference": "REF1",
+    "titre": "Le Petit Prince",
+    "reference": "ISBN001",
     "statut": "DISPONIBLE",
-    "auteur": "Auteur",
-    "nb_pages": 100
+    "auteur": "Saint-Exupéry",
+    "nb_pages": 96
+  },
+  {
+    "type": "Livre",
+    "titre": "Clean Code",
+    "reference": "ISBN002",
+    "statut": "DISPONIBLE",
+    "auteur": "Robert C. Martin",
+    "nb_pages": 464
+  },
+  {
+    "type": "Revue",
+    "titre": "National Geographic",
+    "reference": "REV001",
+    "statut": "EMPRUNTE",
+    "numero": 245,
+    "periodicite": "Mensuelle"
+  },
+  {
+    "type": "Revue",
+    "titre": "Science et Vie",
+    "reference": "REV002",
+    "statut": "DISPONIBLE",
+    "numero": 1120,
+    "periodicite": "Mensuelle"
+  },
+  {
+    "type": "DVD",
+    "titre": "Inception",
+    "reference": "DVD001",
+    "statut": "EMPRUNTE",
+    "duree_minutes": 148,
+    "realisateur": "Christopher Nolan"
+  },
+  {
+    "type": "DVD",
+    "titre": "Interstellar",
+    "reference": "DVD002",
+    "statut": "DISPONIBLE",
+    "duree_minutes": 169,
+    "realisateur": "Christopher Nolan"
+  },
+  {
+    "type": "Memoire",
+    "titre": "Étude sur la POO",
+    "reference": "MEM001",
+    "statut": "DISPONIBLE",
+    "auteur_etudiant": "Aissatou Ba",
+    "annee_soutenance": 2025
+  },
+  {
+    "type": "Memoire",
+    "titre": "Systèmes distribués",
+    "reference": "MEM002",
+    "statut": "DISPONIBLE",
+    "auteur_etudiant": "Ibrahima Fall",
+    "annee_soutenance": 2024
   }
 ]

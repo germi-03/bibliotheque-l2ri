@@ -4,6 +4,7 @@ Module définissant la classe Memoire, héritant de DocumentBase.
 
 from src.models.document_base import DocumentBase
 from src.models.enums import StatutDocument
+from src.exceptions.exceptions_biblio import DocumentIndisponibleError
 
 
 class Memoire(DocumentBase):
@@ -53,9 +54,7 @@ class Memoire(DocumentBase):
         :raises ValueError: Si le mémoire n'est pas disponible.
         """
         if self.statut != StatutDocument.DISPONIBLE:
-            raise ValueError(
-                f"Le mémoire '{self.titre}' n'est pas disponible (statut actuel : {self.statut})."
-            )
+            raise DocumentIndisponibleError(self.titre, str(self.statut))
         self.statut = StatutDocument.EMPRUNTE
 
     def calculer_amende(self, jours_retard: int) -> float:

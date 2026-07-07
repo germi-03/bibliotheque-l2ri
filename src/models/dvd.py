@@ -4,6 +4,7 @@ Module définissant la classe DVD, héritant de DocumentBase.
 
 from src.models.document_base import DocumentBase
 from src.models.enums import StatutDocument
+from src.exceptions.exceptions_biblio import DocumentIndisponibleError
 
 
 class DVD(DocumentBase):
@@ -52,9 +53,7 @@ class DVD(DocumentBase):
         :raises ValueError: Si le DVD n'est pas disponible.
         """
         if self.statut != StatutDocument.DISPONIBLE:
-            raise ValueError(
-                f"Le DVD '{self.titre}' n'est pas disponible (statut actuel : {self.statut})."
-            )
+            raise DocumentIndisponibleError(self.titre, str(self.statut))
         self.statut = StatutDocument.EMPRUNTE
 
     def calculer_amende(self, jours_retard: int) -> float:

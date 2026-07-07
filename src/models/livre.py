@@ -4,6 +4,7 @@ Module définissant la classe Livre, héritant de DocumentBase.
 
 from src.models.document_base import DocumentBase
 from src.models.enums import StatutDocument
+from src.exceptions.exceptions_biblio import DocumentIndisponibleError
 
 
 class Livre(DocumentBase):
@@ -52,9 +53,7 @@ class Livre(DocumentBase):
         :raises ValueError: Si le livre n'est pas disponible.
         """
         if self.statut != StatutDocument.DISPONIBLE:
-            raise ValueError(
-                f"Le livre '{self.titre}' n'est pas disponible (statut actuel : {self.statut})."
-            )
+            raise DocumentIndisponibleError(self.titre, str(self.statut))
         self.statut = StatutDocument.EMPRUNTE
 
     def calculer_amende(self, jours_retard: int) -> float:

@@ -1,0 +1,10 @@
+[
+  {
+    "type": "Livre",
+    "titre": "Test",
+    "reference": "REF1",
+    "statut": "DISPONIBLE",
+    "auteur": "Auteur",
+    "nb_pages": 100
+  }
+]

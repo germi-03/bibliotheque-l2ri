@@ -39,7 +39,10 @@ def exporter_emprunts_retard(bibliotheque, filepath: str, date_reference: date =
     with open(filepath, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
-            fieldnames=["adherent", "document", "date_emprunt", "date_retour_prevue", "jours_retard", "amende"],
+            fieldnames=[
+                "adherent", "document", "date_emprunt",
+                "date_retour_prevue", "jours_retard", "amende",
+            ],
         )
         writer.writeheader()
         writer.writerows(lignes)

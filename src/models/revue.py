@@ -54,7 +54,7 @@ class Revue(DocumentBase):
         :raises ValueError: Si la revue n'est pas disponible.
         """
         if self.statut != StatutDocument.DISPONIBLE:
-           raise DocumentIndisponibleError(self.titre, str(self.statut))
+            raise DocumentIndisponibleError(self.titre, str(self.statut))
         self.statut = StatutDocument.EMPRUNTE
 
     def calculer_amende(self, jours_retard: int) -> float:

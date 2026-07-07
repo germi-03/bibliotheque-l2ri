@@ -69,4 +69,7 @@ class DVD(DocumentBase):
         return jours_retard * self.TARIF_AMENDE_JOUR
 
     def __str__(self) -> str:
-        return f"DVD: {self.titre} réalisé par {self.realisateur} ({self.duree_minutes} min) — {self.statut}"
+        return (
+            f"DVD: {self.titre} réalisé par {self.realisateur} "
+            f"({self.duree_minutes} min) — {self.statut}"
+        )

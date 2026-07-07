@@ -54,4 +54,7 @@ class Bibliotheque:
         return list(self._adherents.values())
 
     def __str__(self) -> str:
-        return f"Bibliotheque '{self._nom}' — {len(self._documents)} document(s), {len(self._adherents)} adhérent(s)"
+        return (
+            f"Bibliotheque '{self._nom}' — {len(self._documents)} document(s), "
+            f"{len(self._adherents)} adhérent(s)"
+        )

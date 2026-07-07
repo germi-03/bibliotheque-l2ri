@@ -53,9 +53,11 @@ class DBManager:
 
             conn.execute(
                 "INSERT INTO emprunts "
-                "(document_id, adherent_id, adherent_nom, date_emprunt, date_retour_prevue, date_retour_effective) "
+                "(document_id, adherent_id, adherent_nom, date_emprunt, "
+                "date_retour_prevue, date_retour_effective) "
                 "VALUES (?, ?, ?, ?, ?, ?)",
-                (document_id, adherent_id, adherent_nom, date_emprunt, date_retour_prevue, date_retour_effective),
+                (document_id, adherent_id, adherent_nom, date_emprunt,
+                 date_retour_prevue, date_retour_effective),
             )
         logger.info("Emprunt inséré en base pour: %s", reference_document)
 

@@ -4,7 +4,6 @@ Module de gestion du cycle de vie complet des emprunts.
 
 import logging
 from datetime import date
-from src.exceptions.exceptions_biblio import DocumentIndisponibleError
 
 logger = logging.getLogger(__name__)
 
@@ -42,7 +41,9 @@ class GestionEmprunts:
         logger.info("Emprunt effectué: %s -> %s", adherent.nom, document.titre)
         return emprunt
 
-    def effectuer_retour(self, adherent_id: str, reference_document: str, date_retour: date = None) -> float:
+    def effectuer_retour(
+        self, adherent_id: str, reference_document: str, date_retour: date = None
+    ) -> float:
         """
         Enregistre le retour d'un document et calcule l'amende éventuelle.
 

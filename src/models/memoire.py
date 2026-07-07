@@ -19,7 +19,9 @@ class Memoire(DocumentBase):
     DUREE_EMPRUNT_JOURS = 3
     TARIF_AMENDE_JOUR = 300  # en FCFA
 
-    def __init__(self, titre: str, reference: str, auteur_etudiant: str, annee_soutenance: int) -> None:
+    def __init__(
+        self, titre: str, reference: str, auteur_etudiant: str, annee_soutenance: int
+    ) -> None:
         """
         Initialise un mémoire.
 

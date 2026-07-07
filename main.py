@@ -23,7 +23,7 @@ from src.persistence.json_manager import exporter_catalogue, importer_catalogue
 from src.persistence.csv_manager import exporter_emprunts_retard
 from src.persistence.db_manager import DBManager
 
-from src.exceptions.exceptions_biblio import DocumentIndisponibleError, RetardNonAutoriseError
+from src.exceptions.exceptions_biblio import DocumentIndisponibleError
 
 
 def configurer_logging() -> None:

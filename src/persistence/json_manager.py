@@ -12,7 +12,6 @@ from src.models.enums import StatutDocument
 
 logger = logging.getLogger(__name__)
 
-# Association type_document -> classe, pour la reconstruction lors du chargement
 TYPES_DOCUMENTS = {
     "Livre": Livre,
     "Revue": Revue,
@@ -30,17 +29,27 @@ def exporter_catalogue(documents: list, filepath: str) -> None:
     """
     data = []
     for doc in documents:
-        entry = {"type": type(doc).__name__, "titre": doc.titre,
-                 "reference": doc.reference, "statut": doc.statut.name}
+        entry = {
+            "type": type(doc).__name__,
+            "titre": doc.titre,
+            "reference": doc.reference,
+            "statut": doc.statut.name,
+        }
 
         if isinstance(doc, Livre):
             entry.update({"auteur": doc.auteur, "nb_pages": doc.nb_pages})
         elif isinstance(doc, Revue):
             entry.update({"numero": doc.numero, "periodicite": doc.periodicite})
         elif isinstance(doc, DVD):
-            entry.update({"duree_minutes": doc.duree_minutes, "realisateur": doc.realisateur})
+            entry.update({
+                "duree_minutes": doc.duree_minutes,
+                "realisateur": doc.realisateur,
+            })
         elif isinstance(doc, Memoire):
-            entry.update({"auteur_etudiant": doc.auteur_etudiant, "annee_soutenance": doc.annee_soutenance})
+            entry.update({
+                "auteur_etudiant": doc.auteur_etudiant,
+                "annee_soutenance": doc.annee_soutenance,
+            })
 
         data.append(entry)
 
@@ -68,13 +77,25 @@ def importer_catalogue(filepath: str) -> list:
             raise ValueError(f"Type de document inconnu: {type_doc}")
 
         if type_doc == "Livre":
-            doc = Livre(entry["titre"], entry["reference"], entry["auteur"], entry["nb_pages"])
+            doc = Livre(
+                entry["titre"], entry["reference"],
+                entry["auteur"], entry["nb_pages"]
+            )
         elif type_doc == "Revue":
-            doc = Revue(entry["titre"], entry["reference"], entry["numero"], entry["periodicite"])
+            doc = Revue(
+                entry["titre"], entry["reference"],
+                entry["numero"], entry["periodicite"]
+            )
         elif type_doc == "DVD":
-            doc = DVD(entry["titre"], entry["reference"], entry["duree_minutes"], entry["realisateur"])
+            doc = DVD(
+                entry["titre"], entry["reference"],
+                entry["duree_minutes"], entry["realisateur"]
+            )
         else:  # Memoire
-            doc = Memoire(entry["titre"], entry["reference"], entry["auteur_etudiant"], entry["annee_soutenance"])
+            doc = Memoire(
+                entry["titre"], entry["reference"],
+                entry["auteur_etudiant"], entry["annee_soutenance"]
+            )
 
         doc.statut = StatutDocument[entry["statut"]]
         documents.append(doc)

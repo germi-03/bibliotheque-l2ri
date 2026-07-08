@@ -19,8 +19,8 @@ Le projet met en œuvre :
 ## Membres du groupe
 
 - Germaine — @germi-03
-- Fatoumata — @[fatima2005bah-ai]
-- Monique — @[diagnemonik-pro]
+- Fatoumata — @fatima2005bah-ai
+- Monique — @diagnemonik-pro
 
 Voir [CONTRIBUTIONS.md](CONTRIBUTIONS.md) pour la répartition détaillée du travail.
 

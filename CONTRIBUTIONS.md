@@ -2,8 +2,8 @@
 
 ## Membres du groupe
 - Germaine — @germi-03
-- Fatoumata — @[pseudo_github_fatoumata]
-- Monique — @[pseudo_github_monique]
+- Fatoumata — @fatima2005bah-ai
+- Monique — @diagnemonik-pro
 
 ## Répartition du travail
 
